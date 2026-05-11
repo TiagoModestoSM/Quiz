@@ -8,7 +8,7 @@ pygame.init()
 
 # Def Janela
 HEIGHT = 600
-WIDTH = 800
+WIDTH = 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Mini-Game Quizz!")
 

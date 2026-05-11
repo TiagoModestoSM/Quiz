@@ -99,7 +99,7 @@ def play_game():
             
         elif state == "GAME_OVER":
             end_text = TITLE_FONT.render("FIM DO QUIZ! PARABÉNS... OU NÃO", True, HIGHLIGHT_COLOR)
-            screen.blit(end_text, (150, 200))
+            screen.blit(end_text, (200, 200))
             
             score_text = TITLE_FONT.render(f"Sua Pontuação: {score} de {len(questions)}", True, TEXT_COLOR)
             screen.blit(score_text, (230, 300))
