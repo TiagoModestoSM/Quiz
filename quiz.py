@@ -72,3 +72,42 @@ def play_game():
 
         # Desenhando o jogo
         screen.fill(BG_COLOR)
+        
+        if state == "PLAYING":
+            current_question = questions[current_index]
+            
+            header_text = TITLE_FONT.render(f"Pergunta {current_index + 1} de {len(questions)}", True, HIGHLIGHT_COLOR)
+            screen.blit(header_text, (50,30))
+            
+            question_text = QUESTION_FONT.render(current_question['text'], True, TEXT_COLOR)
+            screen.blit(question_text, (50, 120))
+            
+            text_a = OPTIONS_FONT.render(current_question['A'], True, TEXT_COLOR)
+            text_b = OPTIONS_FONT.render(current_question['B'], True, TEXT_COLOR)
+            text_c = OPTIONS_FONT.render(current_question['C'], True, TEXT_COLOR)
+            text_d = OPTIONS_FONT.render(current_question['D'], True, TEXT_COLOR)
+            text_e = OPTIONS_FONT.render(current_question['E'], True, TEXT_COLOR)
+            
+            screen.blit(text_a, (50, 200))
+            screen.blit(text_b, (50, 250))
+            screen.blit(text_c, (50, 300))
+            screen.blit(text_d, (50, 350))
+            screen.blit(text_e, (50, 400))
+            
+            instruction_text = OPTIONS_FONT.render("Pressione a tecla A, B, C, D ou E no teclado.", True, HIGHLIGHT_COLOR)
+            screen.blit(instruction_text, (50, 500))
+            
+        elif state == "GAME_OVER":
+            end_text = TITLE_FONT.render("FIM DO QUIZ! PARABÉNS... OU NÃO", True, HIGHLIGHT_COLOR)
+            screen.blit(end_text, (150, 200))
+            
+            score_text = TITLE_FONT.render(f"Sua Pontuação: {score} de {len(questions)}", True, TEXT_COLOR)
+            screen.blit(score_text, (230, 300))
+            
+        pygame.display.flip()
+            
+    pygame.quit()
+
+# Inicia o jogo
+if __name__ == "__main__":
+    play_game()
